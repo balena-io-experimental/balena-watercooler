@@ -20,7 +20,11 @@ let main = function() {
     });
     anotherStream = session.stream(flowIds);
     return anotherStream.on("message", function(msg) {
-      if (msg.event === "message" && msg.content.length > 0 && msg.content.length <= 255) {
+      if (
+        msg.event === "message" &&
+        msg.content.length > 0 &&
+        msg.content.length <= 600
+      ) {
         console.log("message from stream:", msg);
         // Use semi-random voice and speed, but always the same
         let base = { user: msg.user, flow: msg.flow };
@@ -29,8 +33,10 @@ let main = function() {
         // Speed will map to 0.75-1.25 speed
         let speed = (Buffer.from(hash(base), "hex")[1] / 255) * 0.5 + 0.75;
 
-        say.stop()
-        say.speak(msg.content, voice, speed);
+        // Remove the syncbot-added link at the end
+        let cleanMsg = msg.content.replace(/\[\](.*)/, "");
+        say.stop();
+        say.speak(cleanMsg, voice, speed);
       }
     });
   });
