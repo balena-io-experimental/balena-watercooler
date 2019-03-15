@@ -20,7 +20,7 @@ let main = function() {
     });
     anotherStream = session.stream(flowIds);
     return anotherStream.on("message", function(msg) {
-      if (msg.event === "message" && msg.content.length > 0) {
+      if (msg.event === "message" && msg.content.length > 0 && msg.content.length <= 255) {
         console.log("message from stream:", msg);
         // Use semi-random voice and speed, but always the same
         let base = { user: msg.user, flow: msg.flow };
