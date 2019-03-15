@@ -35,7 +35,11 @@ let main = function() {
 
         // Remove the syncbot-added link at the end
         let cleanMsg = msg.content.replace(/\[\](.*)/, "");
-        say.stop();
+        try {
+          say.stop();
+        } catch {
+          // don't do anything
+        }
         say.speak(cleanMsg, voice, speed);
       }
     });
