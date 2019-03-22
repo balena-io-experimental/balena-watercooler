@@ -36,4 +36,4 @@ See in our [documentation](dtparam) how to do that.
 
 
 [env-var-docs]: https://www.balena.io/docs/learn/manage/serv-vars/ "Environment and service variables"
-[dtparam]: https://www.balena.io/docs/reference/OS/advanced/#setting-device-tree-overlays-dtoverlay-and-parameters-dtparam "
+[dtparam]: https://www.balena.io/docs/reference/OS/advanced/#setting-device-tree-overlays-dtoverlay-and-parameters-dtparam "Setting device tree overlays (dtoverlay) and parameters (dtparam)"
