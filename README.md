@@ -26,13 +26,13 @@ Some implementation details:
 * Can ajust the software-defined volume by the `VOLUME` env var (it's nonlinear, as much as I can tell,
   depends on `amixer`'s behaviour
 
-See more details regarding setting these variables in our [documentation][env-var-docs]
+See more details regarding setting these variables in our [documentation][env-var-docs].
 
 Hardware differences:
 
 Audio might need to be enabled different ways for different device types. For example for the Raspberry Pi,
 to use the built in audio jack,  enable the `dtparam` needs to have `audio=on` added, and plug in a speaker.
-See in our [documentation](dtparam) how to do that.
+See in our [documentation][dtparam] how to do that.
 
 
 [env-var-docs]: https://www.balena.io/docs/learn/manage/serv-vars/ "Environment and service variables"
